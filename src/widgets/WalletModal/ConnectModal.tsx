@@ -14,7 +14,7 @@ import WalletCard, { MoreWalletCard } from "./WalletCard";
 
 interface Props {
   login: Login;
-  onDismiss?: () => void;
+  onDismiss: () => void;
   displayCount?: number;
   t: (key: string) => string;
 }
