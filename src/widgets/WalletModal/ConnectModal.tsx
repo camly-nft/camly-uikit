@@ -94,7 +94,6 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss, displayCount, t }) =>
 };
 
 ConnectModal.defaultProps = {
-  onDismiss: () => null,
   displayCount: 3,
 };
 

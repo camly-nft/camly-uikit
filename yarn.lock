@@ -1122,10 +1122,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@camly/eslint-config-camly@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@camly/eslint-config-camly/-/eslint-config-camly-1.0.1.tgz#015bd26d68ea98f4d7346006175fc32eac00fa02"
-  integrity sha512-uBey1rW71k8UulDW8abmXcJgg9TzFlUv8u55ftQPSSEIS6KskcXI9yBf1sb8xJHlA5qoIH8Iy53UdnZb2yOOcw==
+"@camly/eslint-config-camly@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@camly/eslint-config-camly/-/eslint-config-camly-1.0.2.tgz#e94fb82e2f6cc21c0e02d397ffbcebc3b78f7c3e"
+  integrity sha512-dhcgZ5IFdOmS5cOFdUeeLlhY6vpNbxgWEEyKMk/nU59X+g8ouOQ+MBWmkTaM/XWLaR+lCK5c3Z4qHXI3ZcNYgQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.7.0"
     "@typescript-eslint/parser" "^4.7.0"
@@ -6119,7 +6119,7 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.1.0.tgz#f65328259305927392c938ed44eb0a5c9b2bd303"
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
-eslint@^7.20.0:
+eslint@^7.2.0:
   version "7.32.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.32.0.tgz#c6d328a14be3fb08c8d1d21e12c02fdb7a2a812d"
   integrity sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==
