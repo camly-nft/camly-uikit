@@ -61,9 +61,11 @@ const scaleKeyValues = {
   },
 };
 
-const getScale = (property: ScaleKeys) => ({ scale = scales.LG }: CamlyToggleProps) => {
-  return scaleKeyValues[scale][property];
-};
+const getScale =
+  (property: ScaleKeys) =>
+  ({ scale = scales.LG }: CamlyToggleProps) => {
+    return scaleKeyValues[scale][property];
+  };
 
 export const CamlyStack = styled.div<HandleProps>`
   position: relative;
