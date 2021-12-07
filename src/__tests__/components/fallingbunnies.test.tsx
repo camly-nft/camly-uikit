@@ -14,12 +14,86 @@ it("renders correctly", () => {
   const { asFragment } = renderWithTheme(<FallingBunnies count={1} />);
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
-      <div>
+      .c1 {
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      align-self: center;
+      fill: #280D5F;
+      -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+    }
+
+    .c0 {
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      position: fixed;
+      top: 0;
+      left: 50vw;
+      -webkit-transform: translate3d(0,-100%,0);
+      -ms-transform: translate3d(0,-100%,0);
+      transform: translate3d(0,-100%,0);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      pointer-events: none;
+      z-index: 99999;
+      -webkit-animation-name: dphWuA;
+      animation-name: dphWuA;
+      -webkit-animation-duration: 10s;
+      animation-duration: 10s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+    }
+
+    .c0:nth-child(5n + 5) {
+      -webkit-animation-delay: 1.3s;
+      animation-delay: 1.3s;
+    }
+
+    .c0:nth-child(3n + 2) {
+      -webkit-animation-delay: 1.5s;
+      animation-delay: 1.5s;
+    }
+
+    .c0:nth-child(2n + 5) {
+      -webkit-animation-delay: 1.7s;
+      animation-delay: 1.7s;
+    }
+
+    .c0:nth-child(3n + 10) {
+      -webkit-animation-delay: 2.7s;
+      animation-delay: 2.7s;
+    }
+
+    .c0:nth-child(7n + 2) {
+      -webkit-animation-delay: 3.5s;
+      animation-delay: 3.5s;
+    }
+
+    .c0:nth-child(4n + 5) {
+      -webkit-animation-delay: 5.5s;
+      animation-delay: 5.5s;
+    }
+
+    .c0:nth-child(3n + 7) {
+      -webkit-animation-delay: 8s;
+      animation-delay: 8s;
+    }
+
+    <div>
         <div
-          class="sc-gsTCUz jYheWP"
+          class="c0"
         >
           <svg
-            class="sc-bdfBwQ cuuOmQ"
+            class="c1"
             color="text"
             height="32"
             viewBox="0 0 32 32"
@@ -43,10 +117,12 @@ it("renders correctly", () => {
               fill-rule="evenodd"
             />
             <path
+              class="left-eye"
               d="M11.9595 18.9091C11.9595 20.248 11.2359 21.3333 10.3433 21.3333C9.45075 21.3333 8.72717 20.248 8.72717 18.9091C8.72717 17.5702 9.45075 16.4849 10.3433 16.4849C11.2359 16.4849 11.9595 17.5702 11.9595 18.9091Z"
               fill="#633001"
             />
             <path
+              class="right-eye"
               d="M23.1111 18.9091C23.1111 20.248 22.3875 21.3333 21.4949 21.3333C20.6024 21.3333 19.8788 20.248 19.8788 18.9091C19.8788 17.5702 20.6024 16.4849 21.4949 16.4849C22.3875 16.4849 23.1111 17.5702 23.1111 18.9091Z"
               fill="#633001"
             />

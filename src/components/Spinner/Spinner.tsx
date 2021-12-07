@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import CamIcon from "./CamIcon";
+import PanIcon from "./CamIcon";
 import CamlyIcon from "./CamlyIcon";
 import { SpinnerProps } from "./types";
 
@@ -37,7 +37,7 @@ const RotatingCamlyIcon = styled(CamlyIcon)`
   transform: translate3d(0, 0, 0);
 `;
 
-const FloatingPanIcon = styled(CamIcon)`
+const FloatingPanIcon = styled(PanIcon)`
   animation: ${float} 6s ease-in-out infinite;
   transform: translate3d(0, 0, 0);
 `;

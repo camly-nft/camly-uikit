@@ -1,6 +1,6 @@
 {
   "name": "@camly/uikit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Set of UI components for camly projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -34,9 +34,9 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
+    "@camly/eslint-config-camly": "1.0.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@camly/eslint-config-camly": "1.0.1",
     "@rollup/plugin-typescript": "^8.2.0",
     "@rollup/plugin-url": "^6.0.0",
     "@storybook/addon-a11y": "^6.1.18",
@@ -78,9 +78,11 @@
     "styled-components": "^5.2.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.0",
     "@types/lodash": "^4.14.162",
     "@types/styled-system": "^5.1.10",
     "lodash": "^4.17.20",
+    "react-popper": "^2.2.5",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5"
   },

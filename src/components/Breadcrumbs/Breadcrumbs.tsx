@@ -7,7 +7,7 @@ import { BreadcrumbsProps } from "./types";
 
 const Separator = styled.div`
   align-items: center;
-  color: currentColor;
+  color: ${({ theme }) => theme.colors.textDisabled};
   display: flex;
   justify-content: center;
   padding-left: 4px;
@@ -26,10 +26,17 @@ const Separator = styled.div`
 
 const StyledBreadcrumbs = styled.ul`
   align-items: center;
-  color: ${({ theme }) => theme.colors.textDisabled};
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.primaryBright};
+    }
+  }
 
   ${space}
 `;

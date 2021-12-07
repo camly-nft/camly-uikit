@@ -1,30 +1,58 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
 import observerOptions from "./options";
 import Wrapper from "./Wrapper";
-import { ImageProps } from "./types";
+import { BackgroundImageProps } from "./types";
+import Placeholder from "./Placeholder";
 
-const BackgroundImage: React.FC<ImageProps> = ({ src, ...otherProps }) => {
-  const imgRef = useRef(null);
+const StyledBackgroundImage = styled(Wrapper)`
+  background-repeat: no-repeat;
+  background-size: contain;
+`;
+
+const BackgroundImage: React.FC<BackgroundImageProps> = ({ loadingPlaceholder, src, width, height, ...props }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const placeholder = loadingPlaceholder || <Placeholder />;
 
   useEffect(() => {
-    const img = (imgRef.current as unknown) as HTMLElement;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const { isIntersecting } = entry;
-        if (isIntersecting) {
-          img.style.backgroundImage = `url("${src}")`;
-          observer.disconnect();
-        }
-      });
-    }, observerOptions);
-    observer.observe(img);
+    let observer: IntersectionObserver;
 
+    if (ref.current) {
+      const div = ref.current;
+
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const { isIntersecting } = entry;
+          if (isIntersecting) {
+            if (src) {
+              // Load the image via an image element so we can show a placeholder until the image is downloaded
+              const img = document.createElement("img");
+              img.onload = () => {
+                div.style.backgroundImage = `url("${src}")`;
+                setIsLoaded(true);
+              };
+              img.src = src;
+            }
+
+            observer.disconnect();
+          }
+        });
+      }, observerOptions);
+      observer.observe(div);
+    }
     return () => {
-      observer.disconnect();
+      if (observer) {
+        observer.disconnect();
+      }
     };
-  }, [src]);
+  }, [src, setIsLoaded]);
 
-  return <Wrapper ref={imgRef} {...otherProps} />;
+  return (
+    <StyledBackgroundImage ref={ref} width={width} height={height} {...props}>
+      {!isLoaded && placeholder}
+    </StyledBackgroundImage>
+  );
 };
 
 export default BackgroundImage;

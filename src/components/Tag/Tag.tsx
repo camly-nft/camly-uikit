@@ -1,6 +1,6 @@
 import React from "react";
-import { scales, TagProps } from "./types";
 import { StyledTag } from "./StyledTag";
+import { TagProps } from "./types";
 
 const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...props }) => (
   <StyledTag {...props}>
@@ -17,9 +17,9 @@ const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...props }) => 
 );
 
 Tag.defaultProps = {
-  variant: "primary",
-  scale: scales.MD,
-  outline: false,
+  // variant: variants.PRIMARY,
+  // scale: scales.MD,
+  // outline: false,
 };
 
 export default Tag;

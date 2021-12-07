@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { DropdownProps, PositionProps, Position } from "./types";
+import { DropdownProps, Position, PositionProps } from "./types";
 
 const getLeft = ({ position }: PositionProps) => {
   if (position === "top-right") {
@@ -27,7 +27,7 @@ const DropdownContent = styled.div<{ position: Position }>`
   background-color: ${({ theme }) => theme.nav.background};
   box-shadow: ${({ theme }) => theme.shadows.level1};
   padding: 16px;
-  max-height: 500px;
+  max-height: 400px;
   overflow-y: auto;
   z-index: ${({ theme }) => theme.zIndices.dropdown};
   border-radius: ${({ theme }) => theme.radii.small};
@@ -49,7 +49,7 @@ const Dropdown: React.FC<DropdownProps> = ({ target, position = "bottom", childr
   );
 };
 Dropdown.defaultProps = {
-  position: "bottom",
+  // position: "bottom",
 };
 
 export default Dropdown;

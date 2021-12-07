@@ -11,6 +11,10 @@
           "rollup.config.js"
         ]
       }
-    ]
+    ],
+    "@typescript-eslint/no-empty-function": 0
+  },
+  "parserOptions": {
+    "warnOnUnsupportedTypeScriptVersion": false
   }
 }

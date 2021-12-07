@@ -1,38 +1,69 @@
 import React, { ChangeEvent } from "react";
-import { SliderContainer, BunnySlider, BarBackground, BarProgress, StyledInput, SliderLabel } from "./styles";
-import BunnyButt from "./svg/BunnyButt";
+import { Box } from "../Box";
+import {
+  BunnySlider,
+  BarBackground,
+  BarProgress,
+  BunnyButt,
+  StyledInput,
+  SliderLabel,
+  SliderLabelContainer,
+} from "./styles";
 import SliderProps from "./types";
 
-// We need to adjust the offset as the percentage increases, as 100% really is 100% - label width. The number 10 is arbitrary, but seems to work...
-const MOVING_SLIDER_LABEL_OFFSET_FACTOR = 10;
-
-const Slider: React.FC<SliderProps> = ({ min, max, value, onValueChanged, valueLabel, ...props }) => {
+const Slider: React.FC<SliderProps> = ({
+  name,
+  min,
+  max,
+  value,
+  onValueChanged,
+  valueLabel,
+  step = "any",
+  disabled = false,
+  ...props
+}) => {
   const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    onValueChanged(parseInt(target.value, 10));
+    onValueChanged(parseFloat(target.value));
   };
 
   const progressPercentage = (value / max) * 100;
-  const isCurrentValueMaxValue = value === max;
-
-  const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
-
+  const isMax = value === max;
+  let progressWidth: string;
+  if (progressPercentage <= 10) {
+    progressWidth = `${progressPercentage + 0.5}%`;
+  } else if (progressPercentage >= 90) {
+    progressWidth = `${progressPercentage - 4}%`;
+  } else if (progressPercentage >= 60) {
+    progressWidth = `${progressPercentage - 2.5}%`;
+  } else {
+    progressWidth = `${progressPercentage}%`;
+  }
+  const labelProgress = isMax ? "calc(100% - 12px)" : `${progressPercentage}%`;
+  const displayValueLabel = isMax ? "MAX" : valueLabel;
   return (
-    <SliderContainer {...props}>
-      <BunnyButt style={{ position: "absolute" }} />
+    <Box position="relative" height="48px" {...props}>
+      <BunnyButt disabled={disabled} />
       <BunnySlider>
-        <BarBackground />
-        <BarProgress isCurrentValueMaxValue={isCurrentValueMaxValue} progress={progressPercentage} />
+        <BarBackground disabled={disabled} />
+        <BarProgress style={{ width: progressWidth }} disabled={disabled} />
         <StyledInput
+          name={name}
           type="range"
           min={min}
           max={max}
           value={value}
+          step={step}
           onChange={handleChange}
-          isCurrentValueMaxValue={isCurrentValueMaxValue}
+          isMax={isMax}
+          disabled={disabled}
         />
       </BunnySlider>
-      {valueLabel && <SliderLabel progress={labelOffset}>{valueLabel}</SliderLabel>}
-    </SliderContainer>
+      {valueLabel && (
+        <SliderLabelContainer>
+          <SliderLabel progress={labelProgress}>{displayValueLabel}</SliderLabel>
+        </SliderLabelContainer>
+      )}
+    </Box>
   );
 };
 
