@@ -196,8 +196,12 @@ export const NotConnected: React.FC = () => {
         setLang={noop}
         currentLang="EN"
         links={links}
-        subLinks={subLinks}
+        // subLinks={subLinks}
         footerLinks={footerLinks}
+        activeItem=""
+        activeSubItem=""
+        buyCakeLabel=""
+        subLinks={[]}
       >
         <div>
           <h1>Page body</h1>
@@ -227,7 +231,10 @@ export const WithoutConnectButton: React.FC = () => {
         currentLang="EN"
         links={links}
         footerLinks={footerLinks}
-        subLinks={subLinks}
+        subLinks={[]}
+        activeItem=""
+        activeSubItem=""
+        buyCakeLabel="" // subLinks={subLinks}
       >
         <div>
           <h1>No connect button on top</h1>
@@ -249,8 +256,12 @@ export const WithSubmenuSelected: React.FC = () => {
         currentLang="EN"
         cakePriceUsd={0.23158668932877668}
         links={links}
-        subLinks={subLinks}
+        // subLinks={subLinks}
         footerLinks={footerLinks}
+        activeItem=""
+        activeSubItem=""
+        buyCakeLabel=""
+        subLinks={[]}
       >
         <div>
           <Heading as="h1" mb="8px">
